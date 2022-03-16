@@ -57,54 +57,7 @@
       <div class="col-sm-1"><img src="tree.jpg" id = "24"   onclick = "check(23)" alt="tree" style="width: 100px;height: 100px; padding-bottom: 5%;"></div>
     </div>
   </body>
-  <script>
-        var ids=["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"]
-        var shakeCount=0;
-        var birdlLocation=18;
-      function check(position)
-         {
-           id=ids[position]
-           img_pos=document.getElementById(id)
-           if(position==birdlLocation)
-           img_pos.src="comorant.jpg"
-           else
-           img_pos.src="nest.jpg"
-  
-           shakeCount=shakeCount+1;
-           document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
-         document.getElementById("score").innerHTML="The score is "+ locationScore(position, birdlLocation); 
-  
-  
-         }
-  
-         function locationScore(pos1, pos2){
-  
-          var row1, row2, col1, col2
-          var data=[[0,1,2,3,4], [5,6,7,8,9], [10,11,12,13,14], [15,16,17,18,19], [20,21,22,23,24]]
-          for(let i=0; i<data.length;i++)
-          {
-              for(let j=0;j<data[i].length;j++)
-              {
-                  if(pos1==data[i][j])
-                  {
-                      row1=i
-                      col1=j
-                  }
-              }
-          }
-          for(let i=0; i<data.length;i++)
-          {
-              for(let j=0;j<data[i].length;j++)
-              {
-                  if(pos2==data[i][j])
-                  {
-                      row2=i
-                      col2=j
-                  }
-              }
-          }
-  
-          if(row1==row2)
+  if(row1==row2)
            return 1
           else if(col1==col2)
             return 1
@@ -112,9 +65,7 @@
            return 1
           else
            return 0
-  
-         }
-    </script>
+}
     </html>	
   
     </body>
