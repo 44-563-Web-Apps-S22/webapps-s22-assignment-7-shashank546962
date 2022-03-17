@@ -20,37 +20,38 @@
   <p id="countdown">Count </p>
   
   <script> 
-  var myTime = undefined
-    function recordReact() 
-    {
-       myTime = Date.now();
-       console.log("Current time in milliseconds is "+ myTime)
+    var myTime = undefined
+      function recordReact() 
+      {
+         myTime = Date.now();
+         console.log("Current time in milliseconds is "+ myTime)
+      
+      }
+      var c = Math.floor(Math.random() * 9)+2;
+    function startTime()
+      {
+          for(let i=0;i<c+1;i++)
+          {
+            setTimeout(()=>{
+          document.getElementById('countdown').innerHTML = i
+        }, (c-i)*1000)
+          }
     
-    }
-
-  function startTime()
-    {
-        for(let i=0;i<4;i++)
-        {
           setTimeout(()=>{
-        document.getElementById('countdown').innerHTML = i
-      }, (3-i)*1000)
-        }
+    
+         if(myTime==undefined)
+         {
+             document.getElementById('target').innerHTML="Too Slow"
+         }
+         else
+         {
+             var buttonTime=Date.now()
+             document.getElementById('target').innerHTML="Time was "+ (buttonTime-myTime)
+         }
+        }, 3000)
+      }
+    </script>
   
-        setTimeout(()=>{
   
-       if(myTime==undefined)
-       {
-           document.getElementById('target').innerHTML="Too Slow"
-       }
-       else
-       {
-           var buttonTime=Date.now()
-           document.getElementById('target').innerHTML="Time was "+ (buttonTime-myTime)
-       }
-      }, 3000)
-    }
-  </script>
-
 </body>
 </html>
